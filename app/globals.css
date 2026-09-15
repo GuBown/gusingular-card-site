@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+}
+
+:root {
+  --background: #f2eeeb;
+  --foreground: #4d382d;
+  --font-sans: 'Avenir Next', Avenir, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+body { min-width: 320px; margin: 0; background: radial-gradient(circle at 50% -20%, rgba(255,255,255,.98) 0, rgba(255,255,255,0) 42%), var(--background); }
+a { -webkit-tap-highlight-color: transparent; }
+.identity-panel { background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(249,246,244,.94)), repeating-linear-gradient(90deg, rgba(82,58,47,.025) 0 1px, transparent 1px 5px); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
