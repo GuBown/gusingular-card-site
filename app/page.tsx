@@ -1,7 +1,16 @@
-import { Download, Mail, MessageCircle, Phone, Smartphone } from 'lucide-react';
-import Image from 'next/image';
+/* oxlint-disable next/no-img-element -- GitHub Pages serves these static image assets directly. */
+import { Download, Mail, MessageCircle, Phone, Smartphone, type LucideIcon } from 'lucide-react';
 
-const contactLinks = [
+type ContactLink = {
+  href: string;
+  label: string;
+  detail: string;
+  icon: LucideIcon;
+  download?: boolean;
+  primary?: boolean;
+};
+
+const contactLinks: ContactLink[] = [
   { href: '/gu-morey.vcf', label: '保存到通讯录', detail: '下载电子名片', icon: Download, download: true, primary: true },
   { href: 'https://wa.me/message/TNBZKOUMIJRVC1?src=qr', label: 'WhatsApp', detail: '直接发起对话', icon: MessageCircle },
   { href: 'mailto:gu@singular.com', label: '发送邮件', detail: 'gu@singular.com', icon: Mail },
@@ -14,13 +23,13 @@ export default function Home() {
       <section className="mx-auto w-full max-w-[560px] overflow-hidden rounded-[30px] border border-[#ddd4cc] bg-white shadow-[0_28px_90px_rgba(70,48,36,0.13)]">
         <div className="identity-panel px-6 pb-8 pt-7 sm:px-10 sm:pb-10 sm:pt-9">
           <div className="mb-14 flex items-center justify-between sm:mb-20">
-            <Image
+            <img
               src="/gusingular-logo.png"
               alt="GuSingular"
               width={900}
               height={169}
-              priority
-              unoptimized
+              fetchPriority="high"
+              decoding="async"
               className="h-auto w-[132px] sm:w-[164px]"
             />
             <span className="rounded-full border border-[#8f786b]/30 px-3 py-1 text-xs tracking-[0.08em] text-[#6d5548]">DIGITAL CARD</span>
