@@ -1,4 +1,5 @@
 import { Download, Mail, MessageCircle, Phone, Smartphone } from 'lucide-react';
+import Image from 'next/image';
 
 const contactLinks = [
   { href: '/gu-morey.vcf', label: '保存到通讯录', detail: '下载电子名片', icon: Download, download: true, primary: true },
@@ -13,7 +14,14 @@ export default function Home() {
       <section className="mx-auto w-full max-w-[560px] overflow-hidden rounded-[30px] border border-[#ddd4cc] bg-white shadow-[0_28px_90px_rgba(70,48,36,0.13)]">
         <div className="identity-panel px-6 pb-8 pt-7 sm:px-10 sm:pb-10 sm:pt-9">
           <div className="mb-14 flex items-center justify-between sm:mb-20">
-            <span className="text-[15px] font-semibold tracking-[0.08em] text-[#543d31]">GuSingular</span>
+            <Image
+              src="/gusingular-logo.png"
+              alt="GuSingular"
+              width={900}
+              height={169}
+              priority
+              className="h-auto w-[132px] sm:w-[164px]"
+            />
             <span className="rounded-full border border-[#8f786b]/30 px-3 py-1 text-xs tracking-[0.08em] text-[#6d5548]">DIGITAL CARD</span>
           </div>
           <p className="mb-2 text-sm tracking-[0.18em] text-[#80695d]">上海顾极智舟国际贸易有限公司</p>
