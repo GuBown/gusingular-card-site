@@ -20,6 +20,7 @@ export default function Home() {
               width={900}
               height={169}
               priority
+              unoptimized
               className="h-auto w-[132px] sm:w-[164px]"
             />
             <span className="rounded-full border border-[#8f786b]/30 px-3 py-1 text-xs tracking-[0.08em] text-[#6d5548]">DIGITAL CARD</span>
